@@ -1,9 +1,11 @@
 Update
 
-All implemented tables so far are functional 
+All implemented tables are functional.
+Template was re made from scratch & under went a few critical changes
+-- 
 
-TODO 
->req skills, quals & exp 
 
-Get the remaining tables functional 
-Ensure that we create reference keys in order to effectively join & query the results 
+Begin test queries -- add any necessary data to the schema
+reference external notes
+
+
