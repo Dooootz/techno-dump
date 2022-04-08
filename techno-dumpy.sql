@@ -94,3 +94,24 @@ CREATE TABLE `jobSeeker` (
   `joinDate` datetime not null,
   PRIMARY KEY (`jobSeekerID`)
 );
+
+insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
+values ('Tre','Day','tre@web.com','123',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()))
+
+insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
+values ('Yammie','Noob','fast@bro.com','321',date(curdate()),'QLD',4430,'www.cv.com','www.picsum.com', date(curdate()))
+
+insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
+values ('Chloe','Kim','chur@web.com','333',date(curdate()),'QLD',4000,'www.cv.com','www.picsum.com', date(curdate()))
+
+insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
+values ('Shaun','White','wet@snow.com','444',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()))
+
+insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
+values ('Harris','Fisher','up2@web.com','888',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()))
+
+
+
+-- ----------------------------------------------------------------------------------------------------------------
+#
+-- ----------------------------------------------------------------------------------------------------------------
