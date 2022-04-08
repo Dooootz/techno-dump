@@ -157,6 +157,8 @@ CREATE TABLE `js_skills` (
   FOREIGN KEY (`jobSeekerID`) REFERENCES `jobSeeker`(`jobSeekerID`)
 );
 
+select * from js_skills;
+
 insert into js_skills(jobSeekerID,skillType,skillYearsExperience)
 values (1,'PHP',3);
 
@@ -177,6 +179,8 @@ CREATE TABLE `js_qualifications` (
   `educationType` varchar(50) not null,
   PRIMARY KEY (`qualificationID`)
 );
+
+select * from js_qualifications;
 
 insert into js_qualifications(jobSeekerID, qualificationType, educationType)
 values (1,'Diploma Software Development','TAFE');
@@ -200,6 +204,8 @@ CREATE TABLE `js_experience` (
   `roleYearsExperience` int not null,
   PRIMARY KEY (`experienceID`)
 );
+
+select * from js_experience;
 
 insert into js_experience(jobSeekerID, roleTitle, roleYearsExperience)
 values (1,'Software Developer',1);
