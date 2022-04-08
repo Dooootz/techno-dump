@@ -1,11 +1,15 @@
 Update
 
 All implemented tables are functional.
-Template was re made from scratch & under went a few critical changes
+Template was re made from scratch + under went a few critical changes
 -- 
 
 
 Begin test queries -- add any necessary data to the schema
 reference external notes
+
+Target tables & joins 
+use input template
+Clone, stage & backup schema through out testing
 
 
