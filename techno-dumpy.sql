@@ -216,19 +216,33 @@ values (2,'Software Developer',2);
 insert into js_experience(jobSeekerID, roleTitle, roleYearsExperience)
 values (3,'Software Developer',5);
 
-
-
-
-
 -- ----------------------------------------------------------------------------------------------------------------
+#req_skills
 -- ----------------------------------------------------------------------------------------------------------------
+CREATE TABLE `req_skills` (
+  `req_skillsID` int auto_increment not null,
+  `jobID` int not null,
+  `skillsType` varchar(50) not null,
+  `req_skillsType` varchar(50) not null,
+  `req_skillYearsExperience` int not null,
+  PRIMARY KEY (`req_skillsID`),
+  FOREIGN KEY (`jobID`) REFERENCES `jobListing`(`jobID`),
+  FOREIGN KEY (`skillsType`) REFERENCES `js_skills`(`skillsType`)
+);
+
+select * from req_skills;
+
+insert into req_skills(jobID, skillsType, req_skillsType, req_skillYearsExperience)
+values (3,'PHP','PHP',5);
+
+insert into req_skills(jobID, skillsType, req_skillsType, req_skillYearsExperience)
+values (3,'Javascript','Javascript',5);
+
+insert into req_skills(jobID, skillsType, req_skillsType, req_skillYearsExperience)
+values (3,'HTML','HTML',5);
+
+-- drop table (reset)
+drop table req_skills;
 
 
 
--- ----------------------------------------------------------------------------------------------------------------
--- ----------------------------------------------------------------------------------------------------------------
-
-
-
--- ----------------------------------------------------------------------------------------------------------------
--- ----------------------------------------------------------------------------------------------------------------
