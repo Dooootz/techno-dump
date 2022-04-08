@@ -143,7 +143,7 @@ CREATE TABLE `js_visaStatus` (
 select * from js_visaStatus;
 
 insert into js_visaStatus(jobSeekerID, visaType, visaStartDate, visaExpiryDate, visaNum)
-values (5,'401 Visa','2020-11-30','2022-11-30','12345')
+values (5,'401 Visa','2020-11-30','2022-11-30','12345');
 
 -- ----------------------------------------------------------------------------------------------------------------
 #js_skills
@@ -151,11 +151,20 @@ values (5,'401 Visa','2020-11-30','2022-11-30','12345')
 CREATE TABLE `js_skills` (
   `skillsID` int auto_increment not null,
   `jobSeekerID` int not null,
-  `skillTypeID` int not null,
+  `skillType` varchar(50) not null,
   `skillYearsExperience` int not null,
   PRIMARY KEY (`skillsID`),
   FOREIGN KEY (`jobSeekerID`) REFERENCES `jobSeeker`(`jobSeekerID`)
 );
+
+insert into js_skills(jobSeekerID,skillType,skillYearsExperience)
+values (1,'PHP',3);
+
+insert into js_skills(jobSeekerID,skillType,skillYearsExperience)
+values (1,'HTML',3);
+
+insert into js_skills(jobSeekerID,skillType,skillYearsExperience)
+values (1,'Javascript',3);
 
 
 -- ----------------------------------------------------------------------------------------------------------------
@@ -169,6 +178,17 @@ CREATE TABLE `js_qualifications` (
   PRIMARY KEY (`qualificationID`)
 );
 
+insert into js_qualifications(jobSeekerID, qualificationType, educationType)
+values (1,'Diploma Software Development','TAFE');
+
+insert into js_qualifications(jobSeekerID, qualificationType, educationType)
+values (1,'Diploma Database Development','TAFE');
+
+insert into js_qualifications(jobSeekerID, qualificationType, educationType)
+values (1,'Cert IV Information Technology','TAFE');
+
+
+
 
 -- ----------------------------------------------------------------------------------------------------------------
 #js_experience
@@ -180,6 +200,28 @@ CREATE TABLE `js_experience` (
   `roleYearsExperience` int not null,
   PRIMARY KEY (`experienceID`)
 );
+
+insert into js_experience(jobSeekerID, roleTitle, roleYearsExperience)
+values (1,'Software Developer',1);
+
+insert into js_experience(jobSeekerID, roleTitle, roleYearsExperience)
+values (2,'Software Developer',2);
+
+insert into js_experience(jobSeekerID, roleTitle, roleYearsExperience)
+values (3,'Software Developer',5);
+
+
+
+
+
+-- ----------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------------------------------
+
+
+
+-- ----------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------------------------------
+
 
 
 -- ----------------------------------------------------------------------------------------------------------------
