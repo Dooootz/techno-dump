@@ -1,0 +1,9 @@
+Update
+
+All implemented tables so far are functional 
+
+TODO 
+>req skills, quals & exp 
+
+Get the remaining tables functional 
+Ensure that we create reference keys in order to effectively join & query the results 
