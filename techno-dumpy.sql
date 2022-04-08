@@ -16,6 +16,7 @@ CREATE TABLE `employers` (
 );
 
 
+
 -- create ~ 5 entry points 
 insert into employers(empName,empPhone,empEmail,empAddress,empCity,empState,empPostCode,empProfileImage_URL,empJoinDate)
 values ('Tre Molony',123123,'tre@web.com','1 Queen St','Brisbane','QLD',4170,'www.picsum.co',date(curdate()));
@@ -91,6 +92,8 @@ insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,j
 values(5,'Software Developer','Software Development','Fulltime','Remote',120000,160000,'QLD',4100);
 
 
+
+
 -- ----------------------------------------------------------------------------------------------------------------
 #jobseeker
 -- ----------------------------------------------------------------------------------------------------------------
@@ -127,6 +130,9 @@ values ('Shaun','White','wet@snow.com','444',date(curdate()),'QLD',4100,'www.cv.
 insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
 values ('Harris','Fisher','up2@web.com','888',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()));
 
+
+
+
 -- ----------------------------------------------------------------------------------------------------------------
 #visastatus
 -- ----------------------------------------------------------------------------------------------------------------
@@ -144,6 +150,8 @@ select * from js_visaStatus;
 
 insert into js_visaStatus(jobSeekerID, visaType, visaStartDate, visaExpiryDate, visaNum)
 values (5,'401 Visa','2020-11-30','2022-11-30','12345');
+
+
 
 -- ----------------------------------------------------------------------------------------------------------------
 #js_skills
@@ -167,6 +175,7 @@ values (1,'HTML',3);
 
 insert into js_skills(jobSeekerID,skillType,skillYearsExperience)
 values (1,'Javascript',3);
+
 
 
 -- ----------------------------------------------------------------------------------------------------------------
@@ -216,6 +225,8 @@ values (2,'Software Developer',2);
 insert into js_experience(jobSeekerID, roleTitle, roleYearsExperience)
 values (3,'Software Developer',5);
 
+
+
 -- ----------------------------------------------------------------------------------------------------------------
 #req_skills
 -- ----------------------------------------------------------------------------------------------------------------
@@ -245,4 +256,55 @@ values (3,'HTML','HTML',5);
 drop table req_skills;
 
 
+-- ----------------------------------------------------------------------------------------------------------------
+#req_qualifications
+-- ----------------------------------------------------------------------------------------------------------------
+CREATE TABLE `req_qualifications` (
+  `req_qualificationID` int auto_increment not null,
+  `jobID` int not null,
+  `qualificationType` varchar(50) not null,
+  `req_qualificationType` varchar(50) not null,
+  `req_educationType` varchar(50) not null,
+  PRIMARY KEY (`req_qualificationID`),
+  FOREIGN KEY (`jobID`) REFERENCES `jobListing`(`jobID`),
+  FOREIGN KEY (`qualificationType`) REFERENCES `js_qualifications`(`qualificationType`)
+);
 
+select * from req_qualifications;
+
+insert into req_qualifications(jobID, qualificationType, req_qualificationType,req_educationType)
+values (4,'Diploma Software Development','Diploma Software Development','TAFE');
+
+insert into req_qualifications(jobID, qualificationType, req_qualificationType,req_educationType)
+values (3,'Diploma Database Development','Diploma Database Development','TAFE');
+
+insert into req_qualifications(jobID, qualificationType, req_qualificationType,req_educationType)
+values (5,'Cert IV Information Technology','Cert IV Information Technology','TAFE');
+
+
+
+-- ----------------------------------------------------------------------------------------------------------------
+#req_experience
+-- ----------------------------------------------------------------------------------------------------------------
+CREATE TABLE `req_experience` (
+  `req_experienceID` int auto_increment not null,
+  `jobID` int not null,
+  `roleTitle` varchar(50) not null,
+  `req_roleTitle` varchar(50) not null,
+  `req_roleYearsExperience` int not null,
+  PRIMARY KEY (`req_experienceID`),
+  FOREIGN KEY (`jobID`) REFERENCES `jobListing`(`jobID`),
+  FOREIGN KEY (`roleTitle`) REFERENCES `js_experience`(`roleTitle`)
+);
+
+
+select * from req_experience;
+
+insert into req_experience(jobID, roleTitle, req_roleTitle, req_roleYearsExperience)
+values (7,'Software Developer','Software Developer',5);
+
+insert into req_experience(jobID, roleTitle, req_roleTitle, req_roleYearsExperience)
+values (4,'Software Tester','Software Tester',5);
+
+insert into req_experience(jobID, roleTitle, req_roleTitle, req_roleYearsExperience)
+values (3,'Database Analyst','Database Analyst',5);
