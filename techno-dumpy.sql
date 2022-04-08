@@ -146,18 +146,40 @@ insert into js_visaStatus(jobSeekerID, visaType, visaStartDate, visaExpiryDate, 
 values (5,'401 Visa','2020-11-30','2022-11-30','12345')
 
 -- ----------------------------------------------------------------------------------------------------------------
+#js_skills
 -- ----------------------------------------------------------------------------------------------------------------
-
+CREATE TABLE `js_skills` (
+  `skillsID` int auto_increment not null,
+  `jobSeekerID` int not null,
+  `skillTypeID` int not null,
+  `skillYearsExperience` int not null,
+  PRIMARY KEY (`skillsID`),
+  FOREIGN KEY (`jobSeekerID`) REFERENCES `jobSeeker`(`jobSeekerID`)
+);
 
 
 -- ----------------------------------------------------------------------------------------------------------------
+#js_qualifications
 -- ----------------------------------------------------------------------------------------------------------------
-
+CREATE TABLE `js_qualifications` (
+  `qualificationID` int auto_increment not null,
+  `jobSeekerID` int not null,
+  `qualificationType` varchar(50) not null,
+  `educationType` varchar(50) not null,
+  PRIMARY KEY (`qualificationID`)
+);
 
 
 -- ----------------------------------------------------------------------------------------------------------------
+#js_experience
 -- ----------------------------------------------------------------------------------------------------------------
-
+CREATE TABLE `js_experience` (
+  `experienceID` int auto_increment not null,
+  `jobSeekerID` int not null,
+  `roleTitle` varchar(50) not null,
+  `roleYearsExperience` int not null,
+  PRIMARY KEY (`experienceID`)
+);
 
 
 -- ----------------------------------------------------------------------------------------------------------------
