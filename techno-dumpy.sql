@@ -1,4 +1,6 @@
--- create employer table 
+-- ----------------------------------------------------------------------------------------------------------------
+#employers
+-- ----------------------------------------------------------------------------------------------------------------
 CREATE TABLE `employers` (
   `employerID` int auto_increment not null,
   `empName` varchar(50) not null,
@@ -58,12 +60,37 @@ CREATE TABLE `jobListing` (
 
 select * from jobListing;
 
-insert into jobListing(jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
-values('Junior React Developer','Web Development','Fulltime','Great Company',60000,80000,'QLD',4100)
 
-insert into jobListing(jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
-values('Junior React Developer','Web Development','Fulltime','Great Company',60000,80000,'QLD',4100)
+insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
+values(1,'Junior React Developer','Web Development','Fulltime','Great Company',60000,80000,'QLD',4100);
 
--- c
+insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
+values(2,'Unity Game Developer','Game Development','Casual','Small Indie Company',40000,50000,'VIC',3000);
+
+insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
+values(3,'Data Analyst','Database Dev','Part time','Flexible Hours',70000,90000,'NSW',2100);
+
+insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
+values(4,'Software Tester','Software Development','Part time','Small start up',40000,60000,'QLD',4000);
+
+insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
+values(5,'Web Designer','Web Design','Fulltime','Remote',50000,60000,'QLD',4100);
+
+
 -- ----------------------------------------------------------------------------------------------------------------
+#jobseeker
 -- ----------------------------------------------------------------------------------------------------------------
+CREATE TABLE `jobSeeker` (
+  `jobSeekerID` int auto_increment not null,
+  `firstName` varchar(50) not null,
+  `lastName` varchar(50) not null,
+  `email` varchar(50) not null,
+  `password` varchar(50) not null,
+  `birthDate` date not null,
+  `state` varchar(30),
+  `postCode` int not null,
+  `CV_URL` varchar(255) not null,
+  `profileImage_URL` varchar(255) not null,
+  `joinDate` datetime not null,
+  PRIMARY KEY (`jobSeekerID`)
+);
