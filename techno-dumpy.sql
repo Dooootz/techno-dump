@@ -34,6 +34,11 @@ values ('Khamzat Chimaev',112233,'bird@web.com','89 Eagle St','Brisbane','QLD',4
 
 select * from employers;
 
+update employers
+set empName = 'Kmart'
+where employerID = 1;
+
+
 
 -- delete the table (reset)
 drop table employers;
@@ -65,6 +70,12 @@ insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,j
 values(1,'Junior React Developer','Web Development','Fulltime','Great Company',60000,80000,'QLD',4100);
 
 insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
+values(1,'Data Analyst','Database Dev','Fulltime','Great Company',80000,90000,'QLD',4100);
+
+insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
+values(1,'Software Developer','Software Development','Fulltime','Great Company',100000,160000,'QLD',4100);
+
+insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
 values(2,'Unity Game Developer','Game Development','Casual','Small Indie Company',40000,50000,'VIC',3000);
 
 insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
@@ -75,6 +86,9 @@ values(4,'Software Tester','Software Development','Part time','Small start up',4
 
 insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
 values(5,'Web Designer','Web Design','Fulltime','Remote',50000,60000,'QLD',4100);
+
+insert into jobListing(employerID,jobTitle,jobType,positionType,jobDescription,jobMinSalary,jobMaxSalary,jobState,jobPostCode)
+values(5,'Software Developer','Software Development','Fulltime','Remote',120000,160000,'QLD',4100);
 
 
 -- ----------------------------------------------------------------------------------------------------------------
@@ -95,25 +109,26 @@ CREATE TABLE `jobSeeker` (
   PRIMARY KEY (`jobSeekerID`)
 );
 
-insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
-values ('Tre','Day','tre@web.com','123',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()))
+select * from jobSeeker;
 
-insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
-values ('Yammie','Noob','fast@bro.com','321',date(curdate()),'QLD',4430,'www.cv.com','www.picsum.com', date(curdate()))
 
 insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
-values ('Chloe','Kim','chur@web.com','333',date(curdate()),'QLD',4000,'www.cv.com','www.picsum.com', date(curdate()))
+values ('Tre','Day','tre@web.com','123',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()));
 
 insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
-values ('Shaun','White','wet@snow.com','444',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()))
+values ('Yammie','Noob','fast@bro.com','321',date(curdate()),'QLD',4430,'www.cv.com','www.picsum.com', date(curdate()));
 
 insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
-values ('Harris','Fisher','up2@web.com','888',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()))
+values ('Chloe','Kim','chur@web.com','333',date(curdate()),'QLD',4000,'www.cv.com','www.picsum.com', date(curdate()));
 
+insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
+values ('Shaun','White','wet@snow.com','444',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()));
 
+insert into jobSeeker(firstName,lastName,email,password,birthDate,state,postCode,CV_URL,profileImage_URL,joinDate)
+values ('Harris','Fisher','up2@web.com','888',date(curdate()),'QLD',4100,'www.cv.com','www.picsum.com', date(curdate()));
 
 -- ----------------------------------------------------------------------------------------------------------------
-#visastatus 
+#visastatus
 -- ----------------------------------------------------------------------------------------------------------------
 CREATE TABLE `js_visaStatus` (
   `visaID` int auto_increment not null,
@@ -129,3 +144,21 @@ select * from js_visaStatus;
 
 insert into js_visaStatus(jobSeekerID, visaType, visaStartDate, visaExpiryDate, visaNum)
 values (5,'401 Visa','2020-11-30','2022-11-30','12345')
+
+-- ----------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------------------------------
+
+
+
+-- ----------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------------------------------
+
+
+
+-- ----------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------------------------------
+
+
+
+-- ----------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------------------------------
