@@ -113,5 +113,19 @@ values ('Harris','Fisher','up2@web.com','888',date(curdate()),'QLD',4100,'www.cv
 
 
 -- ----------------------------------------------------------------------------------------------------------------
-#
+#visastatus 
 -- ----------------------------------------------------------------------------------------------------------------
+CREATE TABLE `js_visaStatus` (
+  `visaID` int auto_increment not null,
+  `jobSeekerID` int not null,
+  `visaType` varchar(50) not null,
+  `visaStartDate` date ,
+  `visaExpiryDate` date ,
+  `visaNum` int not null,
+  PRIMARY KEY (`visaID`)
+);
+
+select * from js_visaStatus;
+
+insert into js_visaStatus(jobSeekerID, visaType, visaStartDate, visaExpiryDate, visaNum)
+values (5,'401 Visa','2020-11-30','2022-11-30','12345')
