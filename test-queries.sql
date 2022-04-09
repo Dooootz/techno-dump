@@ -50,6 +50,15 @@ and roleYearsExperience > 5;
 
 -- Query 3: 	List all the positions available for software developers including the qualifications and years of experience required.
 
+select * from joblisting;
+select * from req_qualifications;
+select * from req_experience;
+
+select j.jobTitle, j.positionType, j.jobMinSalary, j.jobMaxSalary, q.req_qualificationType, q.req_educationType, e.req_roleTitle, e.req_roleYearsExperience
+from joblisting j 
+left join req_qualifications q on (j.jobID = q.jobID)
+left join req_experience e on (q.jobID = e.jobID)
+where req_roleTitle = 'Software Developer'
 
 
 
