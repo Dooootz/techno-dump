@@ -13,3 +13,19 @@ use input template
 Clone, stage & backup schema through out testing
 
 
+// query notes
+
+q2
+join tables:  jobseeker, experience
+select all candidates that have more than 5 years experience software testing 
+
+in order to successfully execute this- we need to add 2-3 jobseekers with those stats 
+
+
+q3
+
+q4
+
+q5
+
+q6
