@@ -40,10 +40,52 @@ Finally we include req_experience in THAT field + req years experience
 data is queried into the DB lets begin the multi table join 
 
 
+write out some 'psuedo' explainations for the remaining queries to help get a better understanding of the process & sequence
 
+
+--  --  --  --  --  --  --
 
 q4
+Display the ‘best fit’ list of candidate for a specific database analyst position
+
+join tables: jobseekers, js_experience
+
+firstly, we need to create a database analyst job into our DB: might already be there. cont 
+
+then we need to create 2-3 candidates that have data analyst experience 
+we will vary there qualificatioins and experience to produce varied results 
+
+How should we filter for the "best fit" ? 
+
+perhaps we should stage our filters & prioritze certain attributes over others 
+
+first we will find all candidates that have data analyst experience 
+from that list we will sort the candidates from the most years experience in that role
+sort by years experience in decending order 
+
+
+
+
+
 
 q5
+Display the visa status for all web designers. Include the candidate name, surname and phone number.
+
+join tables: jobseekers, visaStatus 
+
+find all candidates that have web designer experience -- display first & last name & phone number 
+join & display visa status for each. 
+
+To create variety lets have candidates with & without visas 
+
+
 
 q6
+List the position title, description, responsibilities, skills requirements, and years of experience, salary range,
+location, and contract type for all positions where the salary is over $150 000. Group the results by position type.
+
+join tables: joblisting, req_skills, req_experience
+
+make sure we include all columns that are referenced above. 
+
+this query needs a GROUP BY position type 
