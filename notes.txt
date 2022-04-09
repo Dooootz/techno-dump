@@ -24,6 +24,24 @@ in order to successfully execute this- we need to add 2-3 jobseekers with those 
 
 q3
 
+List all the positions available for software developers 
+including the qualifications and years of experience required.
+
+join tables: joblisting, req_qualifications, req_experience
+
+To execute this query we need to set up a few things 
+
+List of software developer positions // we have 3 avail positions atm 
+then 
+to each position we need to include the req_qualifications: e.g University degree, tafe degree etc 
+
+Finally we include req_experience in THAT field + req years experience
+
+data is queried into the DB lets begin the multi table join 
+
+
+
+
 q4
 
 q5
