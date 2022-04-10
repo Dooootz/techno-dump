@@ -68,10 +68,16 @@ where req_roleTitle = 'Software Developer'
 
 -- Query 4:  	Display the ‘best fit’ list of candidate for a specific database analyst position
 
+-- Q4
+-- need to return the top result 
 select * from jobseeker;
 select * from js_experience;
 
-
+select js.firstName, js.lastName, exp.roleTitle, exp.roleYearsExperience
+from jobseeker js
+left join js_experience exp on (js.jobSeekerID = exp.jobSeekerID)
+where roleTitle = 'Database Analyst'
+order by roleYearsExperience desc;
 
 
 
