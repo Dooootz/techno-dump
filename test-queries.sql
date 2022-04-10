@@ -83,8 +83,16 @@ order by roleYearsExperience desc;
 
 
 -- Query 5: 	Display the visa status for all web designers. Include the candidate name, surname and phone number. 
+select * from jobseeker;
+select * from js_experience;
+select * from js_visaStatus;
 
-
+select js.firstName, js.lastName, js.phoneNum, exp.roleTitle, exp.roleYearsExperience,
+visa.visaType, visa.visaStartDate, visa.visaExpiryDate, visa.visaNum
+from jobseeker js
+left join js_experience exp on (js.jobSeekerID = exp.jobSeekerID)
+left join js_visastatus visa on (exp.jobSeekerID = visa.jobSeekerID)
+where roleTitle = 'Web Design';
 
 
 
@@ -93,3 +101,10 @@ order by roleYearsExperience desc;
 
 -- Query 6: 	List the position title, description, responsibilities, skills requirements, and years of experience, salary range,
             --  location, and contract type for all positions where the salary is over $150 000. Group the results by position type.
+
+
+
+lets add skills type and skils req to finish the query
+
+
+
