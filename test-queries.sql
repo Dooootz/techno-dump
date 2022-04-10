@@ -68,7 +68,8 @@ where req_roleTitle = 'Software Developer'
 
 -- Query 4:  	Display the ‘best fit’ list of candidate for a specific database analyst position
 
-
+select * from jobseeker;
+select * from js_experience;
 
 
 
