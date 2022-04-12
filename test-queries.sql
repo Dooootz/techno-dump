@@ -78,7 +78,7 @@ from jobseeker js
 left join js_experience exp on (js.jobSeekerID = exp.jobSeekerID)
 where roleTitle = 'Database Analyst'
 order by roleYearsExperience desc;
-
+ 
 
 
 
@@ -103,8 +103,18 @@ where roleTitle = 'Web Design';
             --  location, and contract type for all positions where the salary is over $150 000. Group the results by position type.
 
 
+select * from joblisting;
+select * from req_skills;
 
-lets add skills type and skils req to finish the query
+select j.jobID, j.jobTitle, j.jobDescription, j.jobMinSalary, 
+j.jobMaxSalary, j.jobType, j.positionType, j.jobState, j.jobPostCode,
+s.skillsType, s.req_skillYearsExperience 
+from jobListing j 
+left join req_skills s on (j.jobID = s.jobID)
+where jobMaxSalary > 150000
+group by positionType;
 
 
-
+update joblisting
+set jobType = 'Software Development'
+where jobID = '8'
